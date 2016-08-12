@@ -14,7 +14,7 @@
 		<p>Раскладки по гриду.</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Flexbox</h2>
+		<h2 class="shout grow">Flexbox</h2>
 		<img src="pictures/start.jpg" alt="" class="cover height">
 		<!--
 			To apply styles to the certain slides
@@ -51,6 +51,10 @@
 			<img src="pictures/2-orel.png" height="250px"alt="" />
 		</p>
 	</section>
+  <section class="slide">
+		<h2>Неподдержка =(</h2>
+    <img src="pictures/chuck.jpg" alt="" class="cover">
+	</section>
 	<section class="slide">
 		<h2 class="shout shout_th-slide"><img src="pictures/3-go.png" height="300" alt="" />96.84%</h2>
 		<style media="screen">
@@ -60,6 +64,9 @@
     		justify-content: center;
 			}
 		</style>
+	</section>
+  <section class="slide">
+    <img src="pictures/all.png" alt="" class="cover">
 	</section>
 	<section class="slide">
 		<pre><code>display: flex | inline-flex;</code></pre>
@@ -286,6 +293,9 @@
 	<section class="slide">
 		<img src="pictures/5-osi.png" class="cover" alt="" />
 	</section>
+  <section class="slide">
+    <h2 class="shout grow">Вдоль</h2>
+  </section>
 	<section class="slide">
 		<div class="army">
 			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
@@ -296,7 +306,7 @@
 		</div>
 	</section>
 	<section class="slide">
-		<h2>Вдоль главной оси</h2>
+		<h2>Вдоль справа</h2>
 		<pre>
 			<code>.army {</code>
 			<code>	display:flex;</code>
@@ -312,13 +322,628 @@
 			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
 			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
 			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
-
 		</div>
 	</section>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
+  <section class="slide">
+		<h2>Вдоль посередине</h2>
+		<pre>
+			<code>.army {</code>
+			<code>	display:flex;</code>
+			<code>	justify-content:<mark>center</mark>;</code>
+			<code>	}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<div class="army army_center">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+		<h2>Вдоль равномерно</h2>
+		<pre>
+			<code>.army {</code>
+			<code>	display:flex;</code>
+			<code>	justify-content:<mark>space-between</mark>;</code>
+			<code>	}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<div class="army army_border army_space-between">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+		<h2>Вдоль равномерно (учитывая границы строки)</h2>
+		<pre>
+			<code>.army {</code>
+			<code>	display:flex;</code>
+			<code>	justify-content:<mark>space-around</mark>;</code>
+			<code>	}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<div class="army army_border army_space-around">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+    <h2 class="shout">Поперек</h2>
+  </section>
+  <section class="slide">
+		<div class="army army_align">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+    <h2>Поперек внизу</h2>
+    <pre>
+      <code>.army {</code>
+			<code>	display:flex;</code>
+			<code>	align-items:<mark>flex-start</mark>; <span class="comment">/* по умолчанию */</span></code>
+      <code>	align-items:<mark>flex-end</mark>;</code>
+			<code>	}</code>
+		</pre>
+  </section>
+  <section class="slide">
+		<div class="army army_align army_align-end">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+    <h2>Поперек посередине</h2>
+    <pre>
+      <code>.army {</code>
+			<code>	display:flex;</code>
+      <code>	align-items:<mark>center</mark>;</code>
+			<code>	}</code>
+		</pre>
+  </section>
+  <section class="slide">
+		<div class="army army_align army_align-center">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+		</div>
+	</section>
+  <section class="slide">
+    <h2>Поперек индивидуально</h2>
+    <pre>
+      <code>.army__bird:nth-child(1) {</code>
+      <code>	align-self:<mark>flex-start</mark>;</code>
+      <code>	}</code>
+      <code>.army__bird:nth-child(7) {</code>
+      <code>	align-self:<mark>flex-end</mark>;</code>
+      <code>	}</code>
+    </pre>
+  </section>
+  <section class="slide" id="align-ind">
+		<div class="army army_align army_align-center">
+			<div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+			<div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+		</div>
+    <style>
+    #align-ind .army__bird:nth-child(1) {
+      align-self: flex-start;
+    }
+    #align-ind .army__bird:nth-child(7) {
+      align-self: flex-end;
+    }
+    </style>
+	</section>
+  <section class="slide">
+    <div class="flexo flexo_text flexo_order">
+			<div>0</div>
+			<div>0</div>
+      <div>0</div>
+      <div>0</div>
+      <div>0</div>
+		</div>
+  </section>
+  <section class="slide" id="order-1">
+    <h2>Меняем порядок</h2>
+    <pre>
+      <code>.flexo div:nth-child(<mark class="important">2</mark>) { <mark>order:1</mark> }</code>
+    </pre>
+    <div class="flexo flexo_text flexo_order" style="height: 50%;">
+			<div>0</div>
+			<div>1</div>
+      <div>0</div>
+      <div>0</div>
+      <div>0</div>
+		</div>
+    <style>
+      #order-1 .flexo div:nth-child(2) { order: 1; }
+    </style>
+  </section>
+  <section class="slide">
+    <h2>Меняем порядок</h2>
+    <pre>
+      <code>.flexo div { <mark>order:5</mark> }</code>
+    </pre>
+    <div class="flexo flexo_text flexo_order" style="height: 50%;">
+      <div>5</div>
+			<div>5</div>
+      <div>5</div>
+      <div>5</div>
+      <div>5</div>
+		</div>
+  </section>
+  <section class="slide">
+    <h2>Меняем порядок</h2>
+    <pre>
+      <code>.flexo div:nth-child(<mark class="important">1</mark>) { <mark>order:2</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">2</mark>) { <mark>order:1</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">3</mark>) { <mark>order:5</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">4</mark>) { <mark>order:3</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">5</mark>) { <mark>order:4</mark> }</code>
+    </pre>
+  </section>
+  <section class="slide" id="order">
+    <div class="flexo flexo_text flexo_order">
+      <div>2</div>
+			<div>1</div>
+      <div>5</div>
+      <div>3</div>
+      <div>4</div>
+		</div>
+    <style>
+    #order .flexo div:nth-child(1) { order:2 }
+    #order .flexo div:nth-child(2) { order:1 }
+    #order .flexo div:nth-child(3) { order:5 }
+    #order .flexo div:nth-child(4) { order:3 }
+    #order .flexo div:nth-child(5) { order:4 }
+    </style>
+  </section>
+  <section class="slide">
+    <div class="army-center">
+      <div class="army-center__bird"><img src="pictures/wow.jpg" alt=""></div>
+    </div>
+  </section>
+  <section class="slide">
+    <h2 class="shout grow">По центру</h2>
+  </section>
+  <section class="slide">
+    <h2>По центру</h2>
+    <pre>
+      <code>.army-center {</code>
+      <code>	display:<mark>flex</mark>;</code>
+      <code>	}</code>
+      <code>.army-center__bird {</code>
+      <code>	margin:<mark>auto</mark>;</code>
+      <code>	}</code>
+    </pre>
+  </section>
+  <section class="slide" id="center-1">
+    <div class="army-center">
+      <div class="army-center__bird"><img src="pictures/bird-1.png" height="150px" alt=""></div>
+    </div>
+    <style>
+    .army-center{
+      display: flex;
+      height: 80%;
+    }
+    .army-center__bird{
+      margin: auto;
+    }
+    </style>
+  </section>
+  <section class="slide" id="center-2">
+    <div class="army-center">
+      <div class="army-center__bird"><img src="pictures/bird-6.png" height="350px" alt=""></div>
+    </div>
+  </section>
+  <section class="slide">
+    <h2>Растягивание</h2>
+    <video id="bird-vid" preload="auto" class="place" controls>
+     <source src="pictures/Angry-Birds-Roar.webm">
+    </video>
+  </section>
+  <section class="slide" id="max-widt">
+    <div class="flexo flexo_small" >
+      <div></div>
+			<div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+		</div>
+    <style>
+    #max-widt .flexo{ margin-top: 150px;}
+    </style>
+  </section>
+  <section class="slide">
+    <h2>Растягивание максимально</h2>
+    <pre>
+      <code>.flexo div { <mark>flex-grow:1</mark> }</code>
+    </pre>
+  </section>
+  <section class="slide" id="max-width-1">
+    <div class="flexo flexo_small">
+      <div></div>
+			<div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+		</div>
+    <style>
+    #max-width-1 .flexo{ margin-top: 150px;}
+    #max-width-1 .flexo div{
+      flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide">
+    <pre>
+      <code>.flexo div { <mark>flex-grow:1</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">1</mark>) { <mark>flex-basis:250px</mark> }</code>
+    </pre>
+  </section>
+  <section class="slide" id="zapas">
+    <div class="flexo flexo_small">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <style>
+    #zapas .flexo{ margin-top: 150px;}
+    #zapas .flexo div:nth-child(1){ flex-basis: 250px;}
+    #zapas .flexo div{
+      flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide">
+    <h2>Сжатие</h2>
+    <pre>
+      <code>.flexo div { <mark>width:25%</mark> }</code>
+      <code>.flexo div:nth-child(<mark class="important">4</mark>) { <mark>flex-shrink:4</mark> }</code>
+    </pre>
+  </section>
+  <section class="slide" id="sg">
+    <div class="flexo">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <style>
+    #sg .flexo{ margin-top: 150px;}
+    #sg .flexo div:nth-child(4){ flex-shrink: 6;}
+    #sg .flexo div{
+      flex-basis: 20%;
+      width: 20%;
+    }
+    </style>
+  </section>
+  <section class="slide">
+    <h2 class="shout grow">Строки</h2>
+  </section>
+  <section class="slide" id="man">
+    <div class="army">
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+    </div>
+    <style>
+    #man .army__bird{
+      background: none;
+    }</style>
+  </section>
+  <section class="slide">
+		<h2>Перенос</h2>
+		<pre>
+			<code>.army {</code>
+			<code>	<mark>display:flex;</mark></code>
+			<code>	flex-wrap:<mark>nowrap</mark>; <span class="comment">/* по умолчанию */</span></code>
+			<code>	flex-wrap:<mark>wrap</mark>;</code>
+			<code>	}</code>
+		</pre>
+	</section>
+  <section class="slide" id="many">
+    <div class="army">
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+    </div>
+    <style>
+    #many .army{
+      flex-wrap: wrap;
+    }
+    #many .army__bird{
+      background: none;
+    }</style>
+  </section>
+  <section class="slide">
+		<h2>Наоборот</h2>
+		<pre>
+			<code>.army {</code>
+			<code>	<mark>display:flex;</mark></code>
+			<code>	flex-wrap:<mark>wrap-reverse</mark>;</code>
+			<code>	}</code>
+		</pre>
+	</section>
+  <section class="slide" id="many-rev">
+    <div class="army">
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-0.gif" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-1.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-2.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-3.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-4.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-5.jpg" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+      <div class="army__bird"><img src="pictures/bird-6.png" alt=""></div>
+    </div>
+    <style>
+    #many-rev .army{
+      flex-wrap: wrap-reverse;
+    }
+    </style>
+  </section>
+  <section class="slide" id="m1">
+    <pre>
+      <code>.army{ flex-wrap: <mark>wrap</mark>;}</code>
+    </pre>
+    <div class="army">
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+    </div>
+    <style>
+    #m1 .army{
+      height: 80%;
+      flex-wrap: wrap;
+    }
+    #m1 .army__bird{
+          flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide" id="m2">
+    <pre>
+      <code>.army{ align-content: <mark>center</mark>;}</code>
+    </pre>
+    <div class="army">
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+    </div>
+    <style>
+    #m2 .army{
+      height: 80%;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    #m2 .army__bird{
+          flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide" id="m3">
+    <pre>
+      <code>.army{ align-content: <mark>space-between</mark>;}</code>
+    </pre>
+    <div class="army">
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+    </div>
+    <style>
+    #m3 .army{
+      height: 80%;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+    #m3 .army__bird{
+          flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide" id="m4">
+    <pre>
+      <code>.army{ align-content: <mark>flex-end</mark>;}</code>
+    </pre>
+    <div class="army">
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+      <div class="army__bird">andy</div>
+      <div class="army__bird">mandy</div>
+    </div>
+    <style>
+    #m4 .army{
+      height: 80%;
+      flex-wrap: wrap;
+      align-content: flex-end;
+    }
+    #m4 .army__bird{
+          flex-grow: 1;
+    }
+    </style>
+  </section>
+  <section class="slide">
+    <h2>Ссылочки</h2>
+    <ul>
+			<li><a href="http://frontender.info/a-guide-to-flexbox/">Полное руководство по Flexbox (Frontender Magazine)</a></li>
+      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox (css-tricks)</a></li>
+      <li><a href="http://css-live.ru/articles/flex-grow-strannyj-tak-li-eto.html">flex-grow странный. Так ли это?</a></li>
+      <li><a href="https://youtu.be/x0fcNDaE7Z0">Вадим Макеев (Opera Software): "Flexbox, теперь понятно"</a> <a href="https://pepelsbey.net/pres/flexbox-gotcha/">(слайды)</a></li>
+      <li><a href="https://github.com/philipwalton/flexbugs">flexbugs (github)</a></li>
+		</ul>
+  </section>
+  <section class="slide">
+    <h2 class="shout">Ссылочки</h2>
+    <img class="place bottom" src="pictures/pig_leonard_small.png" height="200px"alt="">
+  </section>
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
 	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->

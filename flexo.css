@@ -8,6 +8,19 @@
 	margin: 10px;
 	border-radius: 100px;
 }
+.flexo_small div{
+	flex-basis: 20px;
+}
+.flexo_text{
+	height: 80%;
+	justify-content: space-between;
+	align-items: center;
+}
+.flexo_text div{
+	color: #FFF;
+	font-size: 70px;
+	text-align: center;
+}
 .flexo div:nth-child(1){
 	background-color: #FFD6D6;
 }
@@ -39,6 +52,27 @@
 }
 .army_j-end{
 	justify-content: flex-end;
+}
+.army_center{
+	justify-content: center;
+}
+.army_border{
+	border: 2px solid #FF9999;
+}
+.army_space-between{
+	justify-content: space-between;
+}
+.army_space-around{
+	justify-content: space-around;
+}
+.army_align .army__bird{
+	background: none;
+}
+.army_align-end{
+	align-items: flex-end;
+}
+.army_align-center{
+	align-items: center;
 }
 .army__bird{
 	background-color: #EBEBEB;
