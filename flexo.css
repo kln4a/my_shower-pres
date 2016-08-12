@@ -1,0 +1,65 @@
+.flexo{
+	display: flex;
+	min-height: 150px;
+	overflow: hidden;
+}
+.flexo div{
+	flex-basis: 100px;
+	margin: 10px;
+	border-radius: 100px;
+}
+.flexo div:nth-child(1){
+	background-color: #FFD6D6;
+}
+.flexo div:nth-child(2){
+	background-color: #FF9999;
+}
+.flexo div:nth-child(3){
+	background-color: #FF5C5C;
+}
+.flexo div:nth-child(4){
+	background-color: #FF3333;
+}
+.flexo div:nth-child(5){
+	background-color: #CC0000;
+}
+
+.army{
+	display: flex;
+	height: 500px;
+}
+.army_reverse{
+	flex-direction: row-reverse;
+}
+.army_column{
+	flex-direction: column;
+}
+.army_column-reverse{
+	flex-direction: column-reverse;
+}
+.army_j-end{
+	justify-content: flex-end;
+}
+.army__bird{
+	background-color: #EBEBEB;
+	margin: 5px;
+	padding: 5px;
+}
+.army__bird  img{
+	height: 100px;
+}
+.army_float{
+	display: block;
+	overflow: hidden;
+	height: 500px;
+}
+.army__bird_float{
+	float: left;
+}
+.army__bird_float img{
+	height: 90px;
+}
+
+.text-center{
+	text-align: center;
+}
