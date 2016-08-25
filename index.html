@@ -1,78 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>Сборка проекта</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Gulp. Зачем нужны сборщики проектов. Собираем фронт в ВАР.</h1>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
+		<h2>Зачем нужны сборщики проектов?</h2>
+		<img src="pictures/omg.png" class="pic_omg" alt="" />
 	</section>
 	<section class="slide">
-		<h2>Shower key features</h2>
+		<img class="cover" src="pictures/len.jpg" alt="">
+	</section>
+	<section class="slide slide_collectors">
+		<div>
+			<p>Grunt</p>
+			<img src="pictures/grunt-logo.png" alt="">
+			<p>~ 17000</p>
+		</div>
+		<div>
+			<p>Gulp</p>
+			<img src="pictures/gulp-logo.png" alt="">
+			<p>~ 15000
+			<br>
+		<span class="_green">+ асинхронно</span></p>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Требования</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
+			<li>Node.js</li>
 		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		<img src="pictures/not-bad.jpg"  width="250" alt="">
 	</section>
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+		<h2>Установка</h2>
+		<pre>
+			<code>npm install gulp -g <mark>// в основную папку пакетов</mark></code>
+			<code>npm init <mark>// package.json</mark></code>
+			<code>npm install gulp gulp-less ... ... ... ... -D <mark>--save-dev</mark></code>
+		</pre>
 	</section>
 	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+			<h2>package.json</h2>
+			<pre>
+					<code>{</code>
+					<code>  "name": "test-project",</code>
+					<code>  "version": "1.0.0",</code>
+					<code>  "license": "ISC",</code>
+					<code>  "devDependencies": {</code>
+					<code>    "gulp": "^3.9.1",</code>
+					<code>  }</code>
+					<code>...</code>
+			</pre>
 	</section>
 	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
+			<h2>gulpfile.js</h2>
+			<pre>
+					<code>var gulp = require('gulp'), <mark>//сборщик</mark></code>
+					<code>    less = require('gulp-less'), <mark>// препроцессор</mark></code>
+					<code>    postcss = require('gulp-postcss'), <mark>//postcss</mark></code>
+					<code>    autoprefixer = require('autoprefixer'), <mark>//autoprefixer</mark></code>
+					<code>    csso = require('postcss-csso'); <mark>//сжатие css</mark></code>
+			</pre>
 	</section>
 	<section class="slide">
 		<h2>Serious citations</h2>
