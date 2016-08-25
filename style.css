@@ -1,0 +1,21 @@
+.pic_omg{
+  width: 70%;
+  margin: 5% 15%;
+}
+.slide_collectors{
+  display: flex;
+}
+.slide_collectors > div{
+  flex-grow: 1;
+  text-align: center;
+}
+.slide_collectors > div img{
+  height: 200px;
+}
+.slide_collectors > div p{
+  font-size: 40px;
+}
+
+._green{
+  color: #33cc33;
+}
