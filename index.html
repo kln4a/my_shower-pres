@@ -72,95 +72,269 @@
 			</pre>
 	</section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<img src="pictures/code.jpg" alt="" class="cover">
 	</section>
 	<section class="slide">
-		<h2>Code samples</h2>
+		<img src="pictures/code_1.jpg" alt="" class="cover">
+	</section>
+	<section class="slide">
+		<img src="pictures/code_2.jpg" alt="" class="cover">
+	</section>
+	<section class="slide slide_postcss">
+		<h2>PostCSS</h2>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>var postcss    = require('gulp-postcss');</code>
+			<code>.pipe( </code>
+			<code>	postcss([</code>
+			<code>    require('autoprefixer'),</code>
+			<code>    require('precss')</code>
+			<code>  ])</code>
+			<code>)</code>
+		</pre>
+		<p>* npmjs.com - <strong>~2068</strong></p>
+	</section>
+	<section class="slide slide_apref">
+		<h2>Autoprefixer</h2>
+      <img class="" src="pictures/ap_code.jpg" width="700px">
+		<p>* Google, Twitter, Taobao</strong></p>
+	</section>
+	<section class="slide">
+		<h2>Асинхронная обработка задач</h2>
+		<pre>
+			<mark>не запустится пока sync не закончит работу!</mark>
+			<code>gulp.task('secondTask', ['sync'], function () { ...</code>
+				<mark>зависимости</mark>
+			<code>gulp.task('thirdTask', ['sync'] function () { ...</code>
+				<code>gulp.task('default', ['sync', 'thirdTask'], function () { ...</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-	
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2 class="shout">Плагины</h2>
 	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
+	<section class="slide">
+		<img src="pictures/plugs.jpg" class="cover" alt="">
+	</section>
+	<section class="slide">
+		<h2>Делаем кроссбраузерность</h2>
+		<p>postcss-opacity</p>
+		<pre>
+			<code>.opacityFallback {</code>
+			<code>   opacity: 0.5;</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>.opacityFallback {</code>
+			<code>   opacity: 0.5;</code>
+			<code>   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<p>postcss-vmin <mark>IE9</mark></p>
+		<pre>
+			<code>.vmFallback {</code>
+			<code>   width: 50vmin;</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>.vmFallback {</code>
+			<code>   width: 50vm;</code>
+			<code>   width: 50vmin;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<p>node-pixrem</p>
+		<pre>
+			<code>.class {</code>
+			<code>   height: 10rem;</code>
+			<code>   font: 2rem Arial;</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>.class {</code>
+			<code>   height: 160px;</code>
+			<code>   height: 10rem;</code>
+			<code>   font: 32px Arial;</code>
+			<code>   font: 2rem Arial;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Работа с изображениями</h2>
+		<p>postcss-assets</p>
+		<pre>
+			<code>div {</code>
+			<code>   background: inline("images/logos/postcss.png");</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>div {</code>
+			<code>   background: url("data:image/png;base64,iVBORw0...ggg==");</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<pre>
+			<code>div {</code>
+			<code>   width: width("images/foobar.png");</code>
+			<code>   height: height("images/foobar.png"б 2);</code>
+			<code>   background-size: size("images/foobar.png");</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>div {</code>
+			<code>   width: 320px;</code>
+			<code>   height: 120px;</code>
+			<code>   background-size: 320px 240px;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<p>postcss-assets</p>
+		<pre>
+			<code>postcss([</code>
+			<code>   require('postcss-assets')({</code>
+			<code>      loadPaths: ['**'],</code>
+			<code>      <mark>cachebuster: true</mark></code>
+			<code>   })</code>
+			<code>])</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<pre>
+			<code>div {</code>
+			<code>   background: resolve("postcss.png");</code>
+			<code>   background: resolve("logos/postcss.png");</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>div {</code>
+			<code>   background: url("/images/logos/postcss.png");</code>
+			<code>   background: url("/images/logos/postcss.png?153bd5d59c8");<mark>cachebuster</mark></code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<p>postcss-inline-svg</p>
+		<pre>
+			<code>div {</code>
+			<code>   background-image: svg-load("img/star.svg", fill=#f00);</code>
+			<code>}</code>
+		</pre>
+		<pre>
+			<code>div {</code>
+			<code>   background-image: svg-load("img/star.svg", fill='%23f00'%3E...%3C/svg%3E"</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Спрайты <mark>postcss-sprites</mark></h2>
+		<pre>
+			<code>.comment {</code>
+			<code>   background-image: url("images/sprite/ico-comment.png");</code>
+			<code>}</code>
+			<code>.bubble {</code>
+			<code>   background-image: url("images/sprite/ico-bubble.png");</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<pre>
+			<code>.comment {</code>
+			<code>   background-image: url("images/sprite.png");</code>
+			<code>   background-position: 0 0;</code>
+			<code>}</code>
+			<code>.bubble {</code>
+			<code>   background-image: url("images/sprite.png");</code>
+			<code>   background-position: 0 -50px;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<p>postcss-circle</p>
+		<div class="circle"></div>
+		<pre>
+			<code>.circle {</code>
+			<code>   circle: 100px red;</code>
+			<code>}</code>
+			<code>.circle {</code>
+			<code>   border-radius: 50%;</code>
+			<code>   width: 100px;</code>
+			<code>   height: 100px;</code>
+			<code>   background-color: red;</code>
+			<code>}</code>
+		</pre>
 		<style>
-			#picture h2 {
-				color:#FFF;
-				}
+		.circle {
+  border-radius: 50%;
+	position: absolute;
+	right: 50px;
+	top: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
 		</style>
 	</section>
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Подготовка проекта</h2>
+		<ul>
+			<li>Сжатие и оптимизация изображений</li>
+			<li>Генерация отзывчивых изображений для элемента <mark>picture</mark></li>
+			<li>Минификация SVG изображений</li>
+			<li>Конвертация изображений в WebP</li>
+			<li>Сборка SVG спрайтов с поддержкой для различных браузеров</li>
+			<li>Встроенный CSS (inline)</li>
+			<li>Минификация HTML</li>
+		</ul>
 	</section>
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<h2>Для разработчиков</h2>
+		<p>browser-sync</p>
+		<img src="pictures/kot.png" width="450px" alt="" />
 	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<pre>
+			<code>gulp.task('webserver', function () {</code>
+			<code>    browserSync.init([path.styles.css],{</code>
+			<code>        proxy: 'domain.loc'</code>
+			<code>    });</code>
+			<code>});</code>
+		</pre>
+		<pre>
+			<code>gulp.task('watch', ['css', 'webserver'], function() {</code>
+			<code>	    gulp.watch([path.styles.less], ['css']);</code>
+			<code>	});</code>
+			<code>gulp.task('dev', ['watch']);</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/b-sync.gif" class="cover" alt="" />
+	</section>
+	<section class="slide">
+		<img src="pictures/bike_1.jpg" class="cover" alt="" />
+	</section>
+	<section class="slide">
+		<h2>Вариант сборки на ВАР5 (eurotradeplus)</h2>
+		<ul>
+			<li>browser-sync, sass</li>
+			<li>gulp-bootstrap-configurator</li>
+			<li>gulp-postcss, autoprefixer</li>
+			<li>gulp-svgo, gulp-replace</li>
+			<li>gulp-uglify, bower</li>
+		</ul>
 	</section>
 	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+		<ul>
+			<li><a href="https://habrahabr.ru/post/250569/">Приятная сборка frontend проекта</a></li>
+			<li><a href="http://frontender.info/handling-sync-tasks-with-gulp-js/">Синхронная обработка задач в Gulp.JS</a></li>
+			<li><a href="http://webdesign.tutsplus.com/tutorials/using-postcss-for-cross-browser-compatibility--cms-24567">Using PostCSS for Cross Browser Compatibility</a></li>
+			<li><a href="http://frontender.info/performance-optimization/">Grunt- и Gulp-таски для оптимизации производительности</a></li>
+			<li><a href="https://oriolo.ru/perehod-s-scss-na-postcss-moj-opyt/">Переход с SCSS на PostCSS</a></li>
+		</ul>
 	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
 	<div class="progress"></div>
 	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>

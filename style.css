@@ -19,3 +19,16 @@
 ._green{
   color: #33cc33;
 }
+
+.slide_postcss{
+  background-image: url('pictures/postcss_logo.svg'), url('pictures/em-logo.svg');
+  background-position: right 50px top 50px, right 50px bottom 50px;
+  background-size: 200px, 200px;
+  background-repeat: no-repeat, no-repeat;
+}
+.slide_apref{
+  background-image: url('pictures/ap-logo.svg'), url('pictures/em-logo.svg');
+  background-position: right 50px top 50px, right 50px bottom 50px;
+  background-size: 200px, 200px;
+  background-repeat: no-repeat, no-repeat;
+}
