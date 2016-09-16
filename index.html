@@ -89,8 +89,102 @@
 		<h2 class="shout">.block__elem</h2>
 	</section>
 	<section class="slide">
-		<img src="pictures/twit.jpg" alt="">
+		<h2>Модификатор</h2>
+		<h2>.block__elem_modifier</h2>
+		<h2>.block__elem_key_value</h2>
+		<p>Класс модификатор никогда не должен использоваться самостоятельно, но всегда только с тем классом, который он модифицирует.</p>
 	</section>
+	<section class="slide">
+		<h2>DOM дерево</h2>
+		<pre><code>&lt;ul&gt;</code>
+		<code>  &lt;li&gt;</code>
+		<code>    &lt;a&gt;</code>
+		<code>      &lt;span&gt;&lt;/span&gt;</code>
+		<code>    &lt;/a&gt;</code>
+		<code>  &lt;/li&gt;</code>
+		<code>&lt;/ul&gt;</code>
+		    </pre>
+	</section>
+	<section class="slide">
+		<h2>DOM дерево</h2>
+		<pre><code>.ul {}</code>
+<code>.ul &gt; li {}</code>
+<code>.ul &gt; li &gt; a {}</code>
+<code>.ul &gt; li &gt; a &gt; span {}</code>
+    </pre>
+	</section>
+	<section class="slide">
+      <div>
+        <h2>БЭМ-дерево</h2>
+        <pre><code>&lt;ul class="<mark>menu</mark>"&gt;</code>
+<code>  &lt;li class="<mark>menu__item</mark>"&gt;</code>
+<code>    &lt;a class="<mark>menu__link</mark>"&gt;</code>
+<code>      &lt;span class="<mark>menu__text</mark>"&gt;&lt;/span&gt;</code>
+<code>    &lt;/a&gt;</code>
+<code>  &lt;/li&gt;</code>
+<code>&lt;/ul&gt;</code>
+    </pre>
+      </div>
+    </section>
+		<section class="slide" id="47">
+      <div>
+        <h2>БЭМ-дерево</h2>
+        <pre><code>.menu {}</code>
+<code>.menu__item {}</code>
+<code>.menu__link {}</code>
+<code>.menu__text {}</code>
+    </pre>
+      </div>
+    </section>
+		<section class="slide">
+			<img src="pictures/twit.jpg" alt="">
+		</section>
+		<section class="slide">
+			        <h2>Элемент элемента?</h2>
+			        <pre><code>&lt;div class="block"&gt;</code>
+			<code>    &lt;div class="block<mark>__elem1</mark>"&gt;</code>
+			<code>        &lt;div class="block<mark class="important">__elem1__elem2</mark>"&gt;&lt;/div&gt;</code>
+			<code>    &lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+			    </pre>
+					<p>2 варианта решения!</p>
+		</section>
+		<section class="slide">
+							<h2>Делать новый блок</h2>
+							<pre><code>&lt;div class="block1"&gt;</code>
+			<code>    &lt;div class="<mark>block1__elem1</mark> <mark class="important">block2</mark>"&gt;</code>
+			<code>        &lt;div class="<mark class="important">block2</mark>__elem1"&gt;&lt;/div&gt;</code>
+			<code>    &lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+					<code>.block1 {}</code>
+<code>.block1__elem1 {}</code>
+<code>.block2 {}</code>
+<code>.block2__elem1 {}</code>
+    </pre>
+		</section>
+		<section class="slide">
+			        <h2>Делать БЭМ-дерево с одноуровневой вложенностью элементов</h2>
+			        <pre><code>&lt;div class="block1"&gt;</code>
+			<code>    &lt;div class="block1<mark>__elem1</mark>"&gt;</code>
+			<code>        &lt;div class="block1<mark>__elem2</mark>"&gt;&lt;/div&gt;</code>
+			<code>    &lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+			    </pre>
+		</section>
+		<section class="slide">
+			        <h2>CSS будет линейным:</h2>
+			        <pre><code>.block1 {}</code>
+			<code>.block1__elem1 {}</code>
+			<code>.block1__elem2 {}</code>
+			    </pre>
+		</section>
+
+		<section class="slide">
+			<h2>element > element нельзя в CSS, но можно в HTML!</h2>
+			<blockquote>
+				<p>Обратите внимание - вы не можете вкладывать элементы в элементы в CSS, но можете и должны вкладывать элементы в элементы в HTML! DOM-дерево и БЭМ-дерево могут быть разными.</p>
+			</blockquote>
+		</section>
 	<section class="slide">
 		<h2>Миксы</h2>
 		<p>Способ использования разных БЭМ-сущностей на одном DOM-узле</p>
@@ -101,11 +195,119 @@
 		</ul>
 	</section>
 	<section class="slide">
+		<img src="pictures/survey.png" alt="">
+	</section>
+	<section class="slide">
+		<pre>
+			<code>&lt;button class="button button_icon_plus top-bar__button"&gt;</code>
+			<code>Create New&lt;/button&gt;</code>
+			<code></code>
+			<code>.button { padding: 10px 5px; font-size: 16px; }</code>
+			<code>.top-bar__button { float: right; margin: 10px; }</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Каскады</h2>
+		<p>Методология БЭМ допускает использование каскадов. Например, каскад уместен, чтобы менять элементы в зависимости от состояния блока или заданной ему тему.</p>
+		<pre>
+			<code>.nav_theme_islands .nav__item</code>
+		</pre>
+		<p>Важно! Применение каскада увеличивает связанность кода и делает его повторное использование невозможным.</p>
+	</section>
+	<section class="slide">
+		<img src="pictures/sass.jpg" alt="">
+	</section>
+	<section class="slide">
+		<pre>
+			<code>.footer__phone</code>
+			<code>.phone_icon_red</code>
+			<code>.main-nav__item_current</code>
+			<code>&lt;a class="conten__link content__link_type_ajax" href="#"&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/final.png" alt="" class="cover" />
+	</section>
+	<section class="slide">
+		<h2>PROFITы</h2>
+		<ol>
+			<li>"Единый" язык в команде</li>
+			<li>Минификация коллизии имен на больших проектах</li>
+			<li>Упрощает восприятие кода</li>
+			<li>Отслеживание иерархических связей внутри блока по коду</li>
+			<li>Самодокументируемый код</li>
+			<li>Повторное использование кода</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Недостатки</h2>
+		<ul>
+			<li>Избыточность классов</li>
+			<li>Нужно "въезжать" в методологию</li>
+			<li>Не получиться быстро "тяп ляп и в продакшн"</li>
+			<li>"Стоимость" внедрения на маленьких проектах слишком большая</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>O_O</h2>
+		<pre>
+			<code>jqWar('.ag-filtercheck.hidden').addClass('showed');</code>
+			<code>jqWar('.ag-filtercheck').removeClass('hidden');</code>
+			<code>jqWar('span.show-many .button-show').hide();</code>
+			<code>jqWar('span.show-many .button-hide').show();</code>
 
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>if (</code>
+			<code>	jqWar('.ag-filtercheck').length == </code>
+			<code>	jqWar('.ag-filtercheck.always-showed').length + </code>
+			<code>	jqWar('.ag-filtercheck.checked:not(.always-showed)').length</code>
+			<code>	) {</code>
+			<code>			jqWar('span.show-many .button-hide').hide();</code>
+			<code>		}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<pre>
+			<code>span.show-many</code>
+			<code>+#infoForm table.web_ar_datagrid td[width="4%"]</code>
+			<code>.ag_filtercheck.hidden.checked {</code>
+			<code>	display: inline-block!important;</code>
+			<code>}</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<pre>
+			<code>.container-info span{</code>
+			<code>	font-weight:bold;</code>
+			<code>	margin-right:5px;</code>
+			<code>}</code>
+			<code>.container-info  div{</code>
+			<code>	margin:5px 0px;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">БЭМ - это не только CSS</h2>
+	</section>
+	<section class="slide">
+		<img src="pictures/sims.jpg" alt="" class="cover">
+	</section>
+	<section class="slide">
+		<h2>Ресурсы</h2>
+		<ol>
+			<li><a href="https://ru.bem.info/">bem.info</a></li>
+			<li><a href="http://nicothin.github.io/idiomatic-pre-CSS/">Как работать с CSS-препроцессорами и БЭМ</a></li>
+			<li><a href="https://wsd.events/2014/12/06/pres/bem-right/">Пишем БЭМ правильно</a></li>
+			<li><a href="https://habrahabr.ru/company/yandex/blog/276035/">БЭМ-методология: с чего всё начиналось и зачем это всё нужно</a></li>
+		</ol>
 	</section>
 	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>
