@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Компоненты</title>
+</head>
+<body>
+  <div id="app">
+    <my-component></my-component>
+    <child message="это сообщение мы передали"></child>
+  </div>
+  <script src="vue.js"></script>
+  <script type="text/javascript">
+  var ch = {
+  // определяем входной параметр
+  props: ['message'],
+  template: '<span>{{ message }}</span>'
+};
+
+  var Child = {
+    template: '<div>Пользовательский компонент! {{ text }}</div><div>{{ message }}</div>',
+    props: ['message'],
+    data() {
+      return { text: 'Текст из return'};
+    }
+  }
+var app = new Vue({
+  el: '#app',
+  components: {
+    'my-component': Child,
+    'child': ch
+  }
+})
+  </script>
+</body>
+</html>
