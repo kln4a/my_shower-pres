@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>feature</title>
+  </head>
+  <body>
+    <div id="app">
+      <organization ref='organization'></organization>
+      <h4>
+        Введите свои контактные данные
+      </h4>
+      <address-component ref="address"></address-component>
+      <el-row>
+        <el-col :span="24">
+          <label for="contact_surname">Фамилия</label>
+          <el-input placeholder="Please input" v-model.trim="contact_surname"></el-input>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <label for="contact_first_name">Имя</label>
+          <el-input placeholder="Please input" v-model.trim="contact_first_name"></el-input>
+        </el-col>
+      </el-row>
+      <el-button type="primary" @click="submitRegistration">Отправить</el-button>
+    </div>
+    <script src="/dist/build.js"></script>
+    <link rel="stylesheet" href="app.css">
+  </body>
+</html>
