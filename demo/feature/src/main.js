@@ -1,36 +1,31 @@
 import Vue from 'vue';
-import VueResource from 'vue-resource';
-import { Button, Select } from 'element-ui';
-import 'element-ui/lib/theme-default/index.css';
+import Element from 'element-ui';
+import 'element-ui/lib/theme-default/index.css'
+import AddressComponent from './address.vue'
+import IsOrganizationComponent from './isOrganization.vue'
 
-Vue.component(Button.name, Button);
-Vue.component(Select.name, Select);
-Vue.use(VueResource);
+Vue.use(Element);
 
 new Vue({
   el: '#app',
-  http: {
-    root: 'https://jsonplaceholder.typicode.com/posts{/id}',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }
-  computed: {
-    resource: function() {
-      return this.$resource('https://jsonplaceholder.typicode.com/posts{/id}')
-    }
+  components: {
+    'address-component': AddressComponent,
+    'organization': IsOrganizationComponent
+  },
+  data: {
+    contact_first_name: '',
+    contact_surname: ''
   },
   methods: {
-    loadCards: function() {
-      var options = {
-          params: {
-            _start: 10,
-            _limit: 100
-        },
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    submitRegistration: function() {
+      var toSubmit = {
+        contact_first_name: this.contact_first_name,
+        contact_surname: this.contact_surname,
+        is_organization: this.$refs.organization.is_organization,
+        company: this.$refs.organization.company,
+        address: this.$refs.address.selected
       }
+      console.log(toSubmit);
     }
   }
 })
