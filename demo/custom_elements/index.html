@@ -4,9 +4,22 @@
     <title>ДЕМО</title>
   </head>
   <body>
-    <audio controls>
-      <source src="Tame Impala - Disciples.mp3" type="audio/mpeg">
-        audio не поддерживается
-    </audio>
+
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+
+    <script>
+      
+      class TsLogo extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = '<img src="https://www.tradesoft.ru/bitrix/templates/tradesoft/images/logo.png">';
+        }
+      }
+      window.customElements.define('ts-logo',TsLogo);
+
+    </script>
   </body>
 </html>
