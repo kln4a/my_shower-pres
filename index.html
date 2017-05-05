@@ -11,8 +11,6 @@
 	<header class="caption">
 		<h1>Присматриваемся к веб-компонентам</h1>
 	</header>
-	<section class="slide"></section>
-	<section class="slide"></section>
 	<section class="slide">
 		<img src="pictures/main.png" class="cover" alt="">
 	</section>
@@ -43,26 +41,56 @@
 			<li>Содержимое шаблона не порождает загрузку внутренних данных и не действует на внешний DOM</li>
 			<li>Внутренности шаблона не видны при выборе нод через <mark>querySelector</mark> или <mark>getElementById</mark>
 			</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>&lt;template&gt;</h2>
-		<ul>
 			<li>Стили не применяются, пока шаблон не активирован</li>
-			<li>Селектор <mark>:host</mark> применяет селекторы только на шаблон</li>
-		</ul>
+		</ol>
 	</section>
 	<section class="slide">
 		<h2>Работа с шаблоном</h2>
 		<pre>
-			<code>&lt;div&gt;</code>
-			<code>&lt;div calss=&quot;inside&quot;&gt;&lt;/div&gt;</code>
-			<code>&lt;/div&gt;</code>
+			<code>&lt;template&gt;</code>
+			<code>&lt;div class=&quot;inside&quot;&gt;&lt;/div&gt;</code>
+			<code>&lt;/template&gt;</code>
 		</pre>
 		<pre>
 			<code>var tepmlate = document.querySelector('template'),</code>
 			<code>	tepmlateCont = document.importNode(template.content, true);</code>
 			<code>tepmlateCont.querySelector('.inside').textContent = 'init';</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Shadow DOM</h2>
+		<ol>
+			<li>2 режима (открытый, закрытый)</li>
+			<li>Связь c Light DOM</li>
+			<li><strong>&#x3C;slot&#x3E;</strong></li>
+		</ol>
+		<pre>
+			<code>&#x3C;better-button&#x3E;</code>
+			<code>	#shadow-root</code>
+			<code>		&#x3C;slot name=&#x22;icon&#x22;&#x3E;&#x3C;/slot&#x3E;</code>
+			<code>	&#x3C;span&#x3E;Settings&#x3C;/span&#x3E;</code>
+			<code>&#x3C;/better-button&#x3E;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<pre>
+			<code>//v1</code>
+			<code>var shadowRoot = element.createShadowRoot();</code>
+			<code>//v2</code>
+			<code>var shadowRoot = element.attachShadow(</code>
+			<code>	mode: 'open'</code>
+			<code>});</code>
+			<code>shadowRoot.innerHTML =&apos;&lt;span&gt;Текст&lt;/span&gt;&apos;;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>CSS Scoping</h2>
+		<pre>
+			<code>:host {} / :host() {} - Текущий элемент</code>
+			<code>:host-context() {} - Родитель, соответствие селектору </code>
+			<code>::slotted() {} - Вставленный контент</code>
+			<code>>>> {} - игнорирует границы между DOM`ами</code>
+			<code></code>
 		</pre>
 	</section>
 	<section class="slide">
@@ -104,25 +132,6 @@
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Shadow DOM</h2>
-		<ol>
-			<li>2 режима (открытый, закрытый)</li>
-			<li>2 редакции спецификации</li>
-			<li>Связь c Light DOM</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<pre>
-			<code>//v1</code>
-			<code>var shadowRoot = element.createShadowRoot();</code>
-			<code>//v2</code>
-			<code>var shadowRoot = element.attachShadow(</code>
-			<code>	mode: 'open'</code>
-			<code>});</code>
-			<code>shadowRoot.innerHTML =&apos;&lt;span&gt;Текст&lt;/span&gt;&apos;;</code>
-		</pre>
-	</section>
-	<section class="slide">
 		<h2>HTML Imports</h2>
 		<ol>
 			<li>Cross Origin Resource Sharing</li>
@@ -132,6 +141,9 @@
 		<pre>
 			<code>&lt;link rel=&quot;import&quot; href=&quot;new.html&quot;&gt;</code>
 		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/support.jpg" class="cover" alt="">
 	</section>
 	<section class="slide">
 		<h2>Поддержка</h2>
@@ -173,7 +185,7 @@
 			</tr>
 		</table>
 	</section>
-	<section class="slide"></section>
+
 	<section class="slide"></section>
 	<section class="slide"></section>
 	<section class="slide"></section>
@@ -187,8 +199,13 @@
 			<li>Доклад <a href="https://youtu.be/q7FDbkYLVBE">Веб компоненты, Олег Мохов (ШРИ)</a></li>
 			<li><a href="https://learn.javascript.ru/webcomponents">Веб-компоненты: взгляд в будущее</a></li>
 			<li><a href="https://css-tricks.com/modular-future-web-components/">A Guide to Web Components</a></li>
-			<li><a href="https://developer.mozilla.org/ru/docs/Web/Web_Components">Веб-компоненты (MDN)</a></li>
 			<li><a href="https://dzone.com/articles/web-components-a-new-perspective-to-web-developmen">Web Components a New Perspective to Web Development</a></li>
+			<li><a href="https://hayato.io/2016/shadowdomv1/">What's New in Shadow DOM v1 (by examples)</a></li>
+			<li><a href="https://drafts.csswg.org/css-scoping/">CSS Scoping</a></li>
+			<li><a href="https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom">
+Shadow DOM v1: Self-Contained Web Components (Eric Bidelman)</a></li>
+			<li><a href="https://wsd.events/2016/11/26/pres/year-with-polymer.pdf">Polymer: год вместе (слайды)</a></li>
+			<li><a href="https://medium.com/google-developer-experts/angular-advanced-styling-guide-v4-f0765616e635">ngular — Advanced Styling Guide (v4+)</a></li>
 		</ol>
 	</section>
 	<script src="node_modules/shower-core/shower.min.js"></script>

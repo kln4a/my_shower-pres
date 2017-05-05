@@ -8,7 +8,6 @@
       <p>Привет <span class="name"></span>!</p>
       <p>Привет из template!</p>
       <img src="https://www.tradesoft.ru/bitrix/templates/tradesoft/images/logo.png" alt="">
-      <button>Fuck Yeah!</button>
       <style media="screen">
         p {
           color: blue;
@@ -33,13 +32,9 @@
           tpl.content.querySelector('.name').textContent = "#holyWAR" + counter();
           var clone = document.importNode(tpl.content, true);
           document.body.appendChild(clone);
-          i = function(){
-            return function(){
-              return i++;
-            }
-          }
         });
       }
     </script>
+
   </body>
 </html>
