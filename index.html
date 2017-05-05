@@ -1,157 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<title>Vue.js - рендер может больше. Используем на практике в ВАР.</title>
+	<title>Веб-компоненты</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="node_modules/shower-material/styles/screen-16x10.css">
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Vue.js - рендер может больше. Используем на практике в ВАР.</h1>
+		<h1>Присматриваемся к веб-компонентам</h1>
 	</header>
-	<section class="slide" id="cover">
-		<h2>Vue.js</h2>
-		<img src="pictures/vue_logo.png" alt="" class="cover">
+	<section class="slide">
+		<img src="pictures/main.png" class="cover" alt="">
 	</section>
 	<section class="slide">
-		<style>
-			.a-w{
-				width: 70%;
-			}
-		</style>
-		<h2>Шаблонизация</h2>
-		<div class="double">
-	    <section>
-	    	<h4>HTML</h4>
-				<img src="pictures/html.jpg" class="a-w" alt="">
-				<p>Монолитные строки с кодом</p>
-	    </section>
-	    <section>
-	    	<h4>DOM</h4>
-				<img src="pictures/dom.svg" class="a-w" alt="">
-				<p>Динамические элементы док-та</p>
-	    </section>
-		</ul>
-	</section>
-	<section class="slide">
-	    	<h1>Handlebars</h1>
-				<pre>
-					<code>var tpl = Handlebars.compile()
-	'&lt;div&gt;{{name}} &lt;span&gt;{{date}}&lt;/span&gt;&lt;/div&gt;'
-);</code>
-				</pre>
-				<pre>
-					<code>var html = template({name: '#holyWar', date: '03/03/2017'});</code>
-				</pre>
-				<hr>
-				<pre>
-					<code><mark>&lt;div&gt;#holyWar&lt;span&gt;03/03/2017&lt;/span&gt;&lt;/div&gt;</mark></code>
-				</pre>
-	</section>
-	<section class="slide">
-	    	<h1>DOM API</h1>
-				<pre>
-					<code>var div = document.createElement('div');</code>
-					<code>var text = document.createTextNode('#holyWar ');</code>
-					<code>var date = document.createElement('span');</code>
-					<code>date.innerHTML = '03/03/2017';</code>
-					<code>div.appendChild(text);</code>
-					<code>div.appendChild(date);</code>
-				</pre>
-				<hr>
-				<pre>
-					<code><mark>&lt;div&gt;#holyWar&lt;span&gt;03/03/2017&lt;/span&gt;&lt;/div&gt;</mark></code>
-				</pre>
-	</section>
-	<section class="slide">
-		<h2>Реактивность</h2>
+		<h2>Templates</h2>
 		<pre>
-			<code>var data = {
-	name: '#holyWar',
-	date: '01/03/2017'
-}</code>
-		</pre>
-		<pre>
-			<code>>_</code>
-			<code> </code>
-		</pre>
-		<hr>
-		<pre>
-			<code><mark>&lt;div&gt;#holyWar&lt;span&gt;01/03/2017&lt;/span&gt;&lt;/div&gt;</mark></code>
+			<code>&lt;div id=&quot;tpl&quot;&gt;</code>
+			<code>	&lt;img src=&quot;temp.jpg&quot; alt=&quot;&quot; /&gt;</code>
+			<code>&lt;/div&gt;</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Реактивность</h2>
+		<h2>Templates</h2>
 		<pre>
-			<code>var data = {
-	name: '#holyWar',
-	date: '01/03/2017'
-}</code>
-		</pre>
-		<pre>
-			<code>data.date = '03/03/2017'</code>
-			<code>>_</code>
-		</pre>
-		<hr>
-		<pre>
-			<code><mark>&lt;div&gt;#holyWar&lt;span&gt;03/03/2017&lt;/span&gt;&lt;/div&gt;</mark></code>
+			<code>&lt;script id=&quot;tpl&quot; type=&quot;text/x-handlebars-template&quot;&gt;</code>
+			<code>	&lt;img src=&quot;temp.jpg&quot; alt=&quot;&quot; /&gt;</code>
+			<code>&lt;/script&gt;</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Директивы</h2>
-		<ul>
-			<li>v-for</li>
-			<li>v-on</li>
-			<li>v-bind</li>
-			<li>v-if|v-show</li>
-			<li>v-model</li>
-		</ul>
-	</section>
-	<section class="slide">
-		<img src="pictures/kot.jpg" alt="" class="cover">
-	</section>
-	<section class="slide">
-		<h2>Компоненты</h2>
 		<pre>
-			<code>
-Vue.component('my-component', {
-  template: '<div>Пользовательский компонент!</div>'
-})
-			</code>
+			<code>&lt;template id=&quot;tpl&quot;&gt;</code>
+    	<code>	Hello &lt;span class=&quot;name&quot;&gt;&lt;/span&gt;!</code>
+			<code>&lt;/template&gt;</code>
+		</pre>
+		<ol>
+			<li>Разметка является скрытым DOM и не рендериться</li>
+			<li>Содержимое шаблона не порождает загрузку внутренних данных и не действует на внешний DOM</li>
+			<li>Внутренности шаблона не видны при выборе нод через <mark>querySelector</mark> или <mark>getElementById</mark>
+			</li>
+			<li>Стили не применяются, пока шаблон не активирован</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Работа с шаблоном</h2>
+		<pre>
+			<code>&lt;template&gt;</code>
+			<code>&lt;div class=&quot;inside&quot;&gt;&lt;/div&gt;</code>
+			<code>&lt;/template&gt;</code>
 		</pre>
 		<pre>
-			<code>import Autocomplete from 'vue2-autocomplete-js'</code>
+			<code>var tepmlate = document.querySelector('template'),</code>
+			<code>	tepmlateCont = document.importNode(template.content, true);</code>
+			<code>tepmlateCont.querySelector('.inside').textContent = 'init';</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<img class="cover" src="pictures/js_en.jpg" style="height: 80%">
+		<h2>Shadow DOM</h2>
+		<ol>
+			<li>2 режима (открытый, закрытый)</li>
+			<li>Связь c Light DOM</li>
+			<li><strong>&#x3C;slot&#x3E;</strong></li>
+		</ol>
+		<pre>
+			<code>&#x3C;better-button&#x3E;</code>
+			<code>	#shadow-root</code>
+			<code>		&#x3C;slot name=&#x22;icon&#x22;&#x3E;&#x3C;/slot&#x3E;</code>
+			<code>	&#x3C;span&#x3E;Settings&#x3C;/span&#x3E;</code>
+			<code>&#x3C;/better-button&#x3E;</code>
+		</pre>
 	</section>
 	<section class="slide">
-		<h2>Как поюзать</h2>
-		<p>Репозиторий: <a href="https://github.com/vuejs-templates/webpack-simple">webpack-simple</a></p>
-		<img src="" alt="">
+		<pre>
+			<code>//v1</code>
+			<code>var shadowRoot = element.createShadowRoot();</code>
+			<code>//v2</code>
+			<code>var shadowRoot = element.attachShadow(</code>
+			<code>	mode: 'open'</code>
+			<code>});</code>
+			<code>shadowRoot.innerHTML =&apos;&lt;span&gt;Текст&lt;/span&gt;&apos;;</code>
+		</pre>
 	</section>
 	<section class="slide">
-		<h2>Ссылочки:</h2>
-		<ul>
-			<li><a href="https://ru.vuejs.org/">Документация на русском</a></li>
-			<li><a href="https://github.com/vuejs/awesome-vue">A curated list of awesome things related to Vue.js</a></li>
-			<li><a href="https://www.youtube.com/playlist?list=PLjwdMgw5TTLW-mAtlR46VajrKs4dep3y0">Скринкаст АНГЛ. Vue 2</a></li>
-			<li><a href="https://www.youtube.com/playlist?list=PL5r0NkdgM0UOxb4Hl81FV5UIgexwTf8h7">Vue.js с нуля РУС. Vue 1 версия</a></li>
-			<li><a href="https://youtu.be/3Sy_Sj1udKc">Доклад «Рендеринг может больше: Vue.js vs React», Андрей Солодовников, НГС</a></li>
-		</ul>
+		<h2>CSS Scoping</h2>
+		<pre>
+			<code>:host {} / :host() {} - Текущий элемент</code>
+			<code>:host-context() {} - Родитель, соответствие селектору </code>
+			<code>::slotted() {} - Вставленный контент</code>
+			<code>>>> {} - игнорирует границы между DOM`ами</code>
+			<code></code>
+		</pre>
 	</section>
 	<section class="slide">
-		<img class="cover" src="pictures/пишу-вар.png" style="height: 80%">
+		<h2>Custom Elements</h2>
+		<pre>
+			<code>&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;</code>
+			<code>&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</code>
+			<code>&lt;div class=&quot;sidebar&quot;&gt;&lt;/div&gt;</code>
+			<code>&lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</code>
+		</pre>
 	</section>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"></div>
+	<section class="slide">
+		<h2>Custom Elements</h2>
+		<pre>
+			<code>&lt;header&gt;&lt;/header&gt;</code>
+			<code>&lt;div class=&quot;content&quot;&gt;</code>
+			<code>	&lt;article&gt;&lt;header&gt;&lt;/header&gt;&lt;/article&gt;</code>
+			<code>&lt;/div&gt;</code>
+			<code>&lt;section class=&quot;sidebar&quot;&gt;&lt;/section&gt;</code>
+			<code>&lt;footer&gt;&lt;/footer&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Custom Elements</h2>
+		<pre>
+			<code>&lt;header&gt;&lt;/header&gt;</code>
+			<code>&lt;content&gt;&lt;/content&gt;</code>
+			<code>&lt;sidebar&gt;&lt;/sidebar&gt;</code>
+			<code>&lt;footer&gt;&lt;/footer&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Custom Elements</h2>
+		<pre>
+			<code>&lt;audio controls&gt;</code>
+			<code>	&lt;source src=&quot;Tame Impala - Disciples.mp3&quot; type=&quot;audio/mpeg&quot;&gt;</code>
+			<code>	audio не поддерживается</code>
+			<code>&lt;/audio&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Custom Elements</h2>
+		<pre>
+			<code>class CustomEl extends HTMLElement</code>
+			<code>window.customElements.define('custom-el', CustomEl);</code>
+			<code> -- </code>
+			<code>&#x3C;custom-el&#x3E;&#x3C;/custom-el&#x3E;</code>
+			<code> -- </code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>HTML Imports</h2>
+		<ol>
+			<li>Cross Origin Resource Sharing</li>
+			<li>Вложение друг в друг друга</li>
+			<li>Применяются стили и сценарии для всего док-та</li>
+		</ol>
+		<pre>
+			<code>&lt;link rel=&quot;import&quot; href=&quot;new.html&quot;&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/support.jpg" class="cover" alt="">
+	</section>
+	<section class="slide">
+		<h2>Поддержка</h2>
+		<table class="striped">
+			<tr>
+				<td></td>
+				<td>Chrome</td>
+				<td>Firefox</td>
+				<td>Safari</td>
+				<td>IE\EDGE</td>
+			</tr>
+			<tr>
+				<td>Custom Elements v1</td>
+				<td>+</td>
+				<td>+/-</td>
+				<td>10.1 +</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>HTML templates</td>
+				<td>+</td>
+				<td>+</td>
+				<td>+</td>
+				<td>+</td>
+			</tr>
+			<tr>
+				<td>Shadow DOM</td>
+				<td>+</td>
+				<td>-</td>
+				<td>10+</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>HTML Imports</td>
+				<td>+</td>
+				<td>+/-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</table>
+	</section>
+	<section class="slide">
+		<h2>Источники</h2>
+		<ol>
+			<li>Доклад <a href="https://youtu.be/KjPsp_PVPuU">Веб компоненты: светлое настоящее, Вадим Черненко</a></li>
+			<li>Доклад <a href="https://youtu.be/q7FDbkYLVBE">Веб компоненты, Олег Мохов (ШРИ)</a></li>
+			<li><a href="https://learn.javascript.ru/webcomponents">Веб-компоненты: взгляд в будущее</a></li>
+			<li><a href="https://css-tricks.com/modular-future-web-components/">A Guide to Web Components</a></li>
+			<li><a href="https://dzone.com/articles/web-components-a-new-perspective-to-web-developmen">Web Components a New Perspective to Web Development</a></li>
+			<li><a href="https://hayato.io/2016/shadowdomv1/">What's New in Shadow DOM v1 (by examples)</a></li>
+			<li><a href="https://drafts.csswg.org/css-scoping/">CSS Scoping</a></li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Источники</h2>
+		<ol>
+			<li><a href="https://developers.google.com/web/fundamentals/getting-started/primers/shadowdom">Shadow DOM v1: Self-Contained Web Components (Eric Bidelman)</a></li>
+			<li><a href="https://wsd.events/2016/11/26/pres/year-with-polymer.pdf">Polymer: год вместе (слайды)</a></li>
+			<li><a href="https://medium.com/google-developer-experts/angular-advanced-styling-guide-v4-f0765616e635">ngular — Advanced Styling Guide (v4+)</a></li>
+		</ol>
+	</section>
 	<script src="shower/shower.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+<script>hljs.initHighlightingOnLoad();</script>
 	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
 	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>

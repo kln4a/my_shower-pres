@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ДЕМО - Css Scoping</title>
+</head>
+  <body>
+    <div id="app">
+      <button type="button" id="push">ПУШМИ</button>
+    </div>
+    <template id="tpl">
+      <p>Привет из template!</p>
+      <style>
+        p {
+          color: blue;
+        }
+      </style>
+    </template>
+    <p>Привет из body!</p>
+    <h3>>>></h3>
+    <div id="elem">ssd</div>
+    <script>
+      var btn = document.getElementById('push');
+      var tpl = document.getElementById('tpl');
+
+      if(btn && tpl){
+        btn.addEventListener('click', function(){
+          var cl = app.attachShadow({
+            mode: 'open'
+          });
+          cl.appendChild(tpl.content.cloneNode(true));
+        });
+      }
+    </script>
+
+    <style>
+      #elem:host(h4){
+        color: red;
+      }
+    </style>
+    <script>
+      var root = elem.attachShadow({
+        mode: 'open'
+      });
+      root.innerHTML = "<h4>Текущее время:</h4> <input type='date'>";
+    </script>
+
+  </body>
+</html>

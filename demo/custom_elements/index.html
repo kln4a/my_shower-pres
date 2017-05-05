@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ДЕМО</title>
+  </head>
+  <body>
+
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+    <ts-logo></ts-logo>
+
+    <script>
+      
+      class TsLogo extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = '<img src="https://www.tradesoft.ru/bitrix/templates/tradesoft/images/logo.png">';
+        }
+      }
+      window.customElements.define('ts-logo',TsLogo);
+
+    </script>
+  </body>
+</html>

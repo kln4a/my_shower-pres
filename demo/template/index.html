@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ДЕМО - Шаблоны</title>
+</head>
+  <body>
+    <template id="tpl">
+      <p>Привет <span class="name"></span>!</p>
+      <p>Привет из template!</p>
+      <img src="https://www.tradesoft.ru/bitrix/templates/tradesoft/images/logo.png" alt="">
+      <style media="screen">
+        p {
+          color: blue;
+        }
+      </style>
+    </template>
+    <button type="button" id="push">ПУШМИ</button>
+    <p>Привет из body</p>
+    <script>
+      var btn = document.getElementById('push');
+      var tpl = document.getElementById('tpl');
+
+      var counter = (function(){
+        var i = 0;
+        return function(){
+          return i++;
+        }
+      })();
+
+      if(btn && tpl){
+        btn.addEventListener('click', function(){
+          tpl.content.querySelector('.name').textContent = "#holyWAR" + counter();
+          var clone = document.importNode(tpl.content, true);
+          document.body.appendChild(clone);
+        });
+      }
+    </script>
+
+  </body>
+</html>
