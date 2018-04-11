@@ -13,123 +13,226 @@
 		<p>Yours Truly, Famous Inc.</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
-	<section class="slide">
-		<h2>Shower key features</h2>
+		<h2>JavaScript</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
+			<li>ECMAScript</li>
+			<li>'use sctrict'</li>
+			<li>подключение скрипта, порядок исполнения</li>
+			<li>async, defer</li>
+			<li>разделитель команд</li>
+			<li>объявление переменной, правила наименования</li>
+			<li>типы данных (приведение к типу)</li>
+			<li>операторы</li>
 		</ol>
 	</section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+		<h2>Операторы</h2>
+		<pre class="double">
+			<code>2 + 1</code>
+			<code>'2' + '1'</code>
+			<code>2 + '1'</code>
+			<code>10 - '5'</code>
+			<code>'6' / 12</code>
+			<code>+(1 - 2)</code>
+			<code>var i = 0;</code>
+			<code>console.log(++i);</code>
+			<code>console.log(i++);</code>
+			<code>console.log(i * 2 - 4)</code>
+			<code>i += 5</code>
+			<code>i *= 4 - 2</code>
+			<code>var x = 1 + (i /= 2)</code>
+			<code>console.log(x)</code>
 		</pre>
 	</section>
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+			<h2>Операторы</h2>
+			<pre class="double">
+				<code>2 + 1 //3</code>
+				<code>'2' + '1' //'21'</code>
+				<code>2 + '1' //'21'</code>
+				<code>10 - '5' //5</code>
+				<code>'6' / 12 //0,5</code>
+				<code>+(1 - 2) //-1</code>
+				<code>var i = 0;</code>
+				<code>console.log(++i); //1</code>
+				<code>console.log(i++); //1</code>
+				<code>console.log(i * 2 - 4) //0</code>
+				<code>i += 5 //7</code>
+				<code>i *= 4 - 2 //14</code>
+				<code>var x = 1 + (i /= 2)</code>
+				<code>console.log(x) //8</code>
+			</pre>
+		</section>
+	<section class="slide">
+		<h2>Числа</h2>
+		<p>Все числа в js вещественные</p>		
+		<pre class="double">
+			<code>0xbbccf //16</code>
+			<code>0Xffbcc</code>
+			<code>0367 //8</code>
+			<code>0178</code>
+			<code>12.3</code>
+			<code>.89</code>
+			<code>1.2e4</code>
+			<code>5E-30</code>
+		</pre>
+	</section>
+	<section class="slide">
+			<h2>Числа</h2>
+			<pre>
+				<code><mark>1 / 0</mark></code>
+				<code><mark>0 / 0</mark></code>
+			</pre>
+	</section>
+	<section class="slide">
+			<h2>Числа</h2>
+			<pre>
+				<code><mark>1 / 0</mark> //Infinity</code>
+				<code><mark>0 / 0</mark> //NaN</code>
+			</pre>
+	</section>
+	<section class="slide">
+			<h2>Числа</h2>
+			<pre>
+				<code><mark>1 / 0</mark> //Infinity</code>
+				<code><mark>0 / 0</mark> //NaN</code>
+				<code>isNaN("12")</code>
+				<code>isNaN(0 / 0)</code>
+				<code>NaN === NaN</code>
+				<code>NaN + 1</code>
+				<code>NaN + 'is'</code>
+				<code>console.log(isFinite(1), isFinite(NaN), isFinite(Infinity));</code>
+			</pre>
+	</section>
+	<section class="slide">
+			<h2>Преобразование</h2>
+			<pre class="double">
+				<code>var n = '1.34';</code>
+				<code>console.log(+n); //1.34</code>
+				<code>console.log(+" -12");</code>
+				<code>console.log(+" \n101 \n");</code>
+				<code>console.log(+""); //0</code>
+				<code>console.log(+ "1 2");</code>
+				<code>//ошибка</code>
+				<code>parseInt("500");</code>
+				<code>parseFloat("7.8");</code>
+				<code>parseInt('FF', 16)</code>
+				<code>var n = Number(255);</code>
+				<code>n.toString(16)</code>
+			</pre>
+	</section>
+	<section class="slide">
+		<h2>Math</h2>
+		<pre>
+				<code>Math.floor //округляет вниз</code>
+				<code>Math.ceil //округляет вверх</code>
+				<code>Math.round //округляет до ближайшего целого</code>
+				<code>num.toFixed(precision) // округление с нужной точностью</code>
+				<code><mark>0.1 + 0.2</mark></code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Строки</h2>
+		<pre>
+			<code>console.log("Как сам?\nКак универсам");</code>
+			<code>console.log("мне нужны \"кавычки\" в строке")</code>
+			<code>str.length; // длина</code>
+			<code>str.charAt(0); // доступ к символам</code>
+			<code>str[0]</code>
+			<code>str.toLowerCase(), str.toUpperCase()</code>
+			<code>str.indexOf("id") // поиск подстроки (lastIndexOf с конца)</code>
+			<code>substring, substr, slice</code>
+		</pre>
+	</section>
+	<section class="slide">
+			<h2>Boolean</h2>
+			<pre>
+				<code>Boolean(undefined);</code>
+				<code>Boolean(NaN);</code>
+				<code>Boolean(null);</code>
+				<code>Boolean(0);</code>
+				<code>Boolean("");</code>
+				<code>someValue || defaultValue</code>
+			</pre>
+	</section>
+	<section class="slide">
+		<h2>Объекты</h2>
+		<pre>
+			<code>o = new Object();</code>
+			<code>o = {};</code>
+			<code>var p = {};</code>
+			<code>console.log(p.mmm);</code>
+			<code>if (mmm in p)</code>
+			<code>if (p.mmm !== undefined)</code>
+			<code>p['mmm']</code>
+			<code>p[key]</code>
+		</pre>
+	</section>
+	<section class="slide">
+			<h2>Объекты</h2>
+			<pre>
+				<code>var size = {</code>
+				<code>	width: 300,</code>
+				<code>	height: 400,</code>
+				<code>}</code>
+				<code>for (var key in obj) { /* ... */ }</code>
+				<code>Object.keys(obj).length</code>
+				<code>Object.keys(obj).foreach(key => { /* ... */});</code>
+			</pre>
+		</section>
+	<section class="slide">
+		<h2>Массивы</h2>
+		<pre>
+			<code>var heroes = ["SpiderMan", "Flash", "Batman"];</code>
+			<code>console.log(heroes[0]);</code>
+			<code>heroes.pop(); //Удаляет последний и возвращает его</code>
+			<code>heroes.push("halk"); //Добавляет в конец массива</code>
+			<code>heroes.shift(); //Удаляет первый и возвращает его</code>
+			<code>heroes.unshift("SpiderMan"); //Добавляет в начало массива</code>
+			<code>arr[1000]</code>
+			<code><mark>arr.length</mark></code>
+		</pre>
+	</section>
+	<section class="slide">
+			<h2>Массивы</h2>
+			<pre>
+				<code>var heroes = ["SpiderMan", "Flash", "Batman"];</code>
+				<code>console.log(heroes[0]);</code>
+				<code>heroes.pop(); //Удаляет последний и возвращает его</code>
+				<code>heroes.push("halk"); //Добавляет в конец массива</code>
+				<code>heroes.shift(); //Удаляет первый и возвращает его</code>
+				<code>heroes.unshift("SpiderMan"); //Добавляет в начало массива</code>
+				<code>arr[1000]</code>
+				<code><mark>arr.length</mark> // - не количество элементов, а последний индекс + 1</code>
+			</pre>
+		</section>
+	<section class="slide">
+		<h2>"arguments"</h2>
+		<pre>
+			<code>function say() {</code>
+			<code>   console.log(arguments)</code>
+			<code>}</code>
+			<code>// arguments – это не массив</code>
+		</pre>
+	</section>
+	<section class="slide">
+			<h2>Время и Дата</h2>
+			<pre>
+				<code>new Date()</code>
+				<code>new Date(milliseconds || datestring)</code>
+				<code>new Date(year, month, date, hours, minutes, seconds, ms)</code>
+				<code>getFullYear(), getMonth(), getDate(), getHours()</code>
+				<code>getMinutes(), getSeconds(), getMilliseconds()</code>
+				<code>toString(), toDateString(), toTimeString()</code>
+				<code>Date.parse('2012-01-26T13:51:50.417Z');</code>
+				<code>Date.now()</code>
+			</pre>
+		</section>
+	<section class="slide">
+		<h2Замыкания, область видимости</h2>
+		<pre>
+			<code>global object</code>
+		</pre>
 	</section>
 	<section class="slide" id="picture">
 		<h2>Pictures</h2>
