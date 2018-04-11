@@ -26,6 +26,19 @@
 		</ol>
 	</section>
 	<section class="slide">
+		<h2>Какой скрипт выполнится первым?</h2>
+		<pre>
+			<code>&lt;script src=&quot;big.js&quot;&gt;&lt;/script&gt;</code>
+			<code>&lt;script src=&quot;small.js&quot;&gt;&lt;/script&gt;</code>
+			<code>----</code>
+			<code>&lt;script async src=&quot;big.js&quot;&gt;&lt;/script&gt;</code>
+			<code>&lt;script async src=&quot;small.js&quot;&gt;&lt;/script&gt;</code>
+			<code>---</code>
+			<code>&lt;script defer src=&quot;big.js&quot;&gt;&lt;/script&gt;</code>
+			<code>&lt;script defer src=&quot;small.js&quot;&gt;&lt;/script&gt;</code>
+		</pre>
+	</section>
+	<section class="slide">
 		<h2>Операторы</h2>
 		<pre class="double">
 			<code>2 + 1</code>
@@ -206,15 +219,36 @@
 				<code><mark>arr.length</mark> // - не количество элементов, а последний индекс + 1</code>
 			</pre>
 		</section>
+		<section class="slide">
+				<h2>"arguments"</h2>
+				<pre>
+					<code>function say() {</code>
+					<code>   console.log(arguments)</code>
+					<code>}</code>
+					<code>// arguments – это не массив</code>
+				</pre>
+			</section>
 	<section class="slide">
-		<h2>"arguments"</h2>
+		<h2>Перебор массива</h2>
 		<pre>
-			<code>function say() {</code>
-			<code>   console.log(arguments)</code>
-			<code>}</code>
-			<code>// arguments – это не массив</code>
+			<code>arr.forEach(function(item, i, arr) {</code>
+			<code>arr.filter //фильтрует массив</code>
+			<code>arr.map //создает новый</code>
+			<code>every/some //проверка массива</code>
+			<code>reduce/reduceRight //последовательной обработки каждого элемента</code>
+			<code>//с сохранением промежуточного результата</code>
 		</pre>
 	</section>
+	<section class="slide">
+			<pre>
+				<code>var arr = ["Я", "люблю", "этот", "javascript"];</code>
+				<code>var arrLength = [];</code>
+				<code>for (var i = 0; i < arr.length; i++) {</code>
+				<code>	arrLength[i] = arr[i].length;</code>
+				<code>}</code>
+				<code>alert( arrLength ); // 1,5,4,10</code>
+			</pre>
+		</section>
 	<section class="slide">
 			<h2>Время и Дата</h2>
 			<pre>
@@ -229,61 +263,57 @@
 			</pre>
 		</section>
 	<section class="slide">
-		<h2Замыкания, область видимости</h2>
+		<h2>Функции, замыкания, область видимости</h2>
 		<pre>
-			<code>global object</code>
+			<code>function myFunction() {</code>
+			<code>	var n = 'myVar'; //локальная</code>
+			<code>}</code>
 		</pre>
 	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+	<section class="slide">
+			<h2>Функции, замыкания, область видимости</h2>
+			<pre>
+				<code>var n = 'myVar'; // глобальная</code>
+				<code>function myFunction() {</code>
+				<code>	console.log(n);</code>
+				<code>}</code>
+			</pre>
+			<p>global object - window</p>
+		</section>
+	<section class="slide">
+		<h2>Вложенные функции</h2>
+		<pre>
+			<code>function sayHiBye(firstName) {</code>
+			<code>	alert( "Привет, " + getFullName() );</code>
+			<code>	function getFullName() {</code>
+			<code>		return firstName;</code>
+			<code>	}</code>
+			<code>}</code>
+		</pre>
 	</section>
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
+			<h2>Замыкания</h2>
+			<pre>
+				<code>var counter = (function() {</code>
+				<code>	var count = 0;</code>
+				<code>	return function() {</code>
+				<code>		return count++;</code>
+				<code>	}</code>
+				<code>})();</code>			
+			</pre>
+		</section>
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<h2>this - контекст вызова</h2>
+		<pre>
+			<code>var user = { firstName: "Вася" };</code>
+			<code>var firstName = "Герман";</code>
+			<code>function func() {</code>
+			<code>	alert( this.firstName );</code>
+			<code>}</code>
+			<code></code>
+			<code></code>
+		</pre>
 	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>
